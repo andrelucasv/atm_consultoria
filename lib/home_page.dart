@@ -1,3 +1,7 @@
+import 'package:atm_consultoria/cliente_page.dart';
+import 'package:atm_consultoria/contato_page.dart';
+import 'package:atm_consultoria/empresa_page.dart';
+import 'package:atm_consultoria/servico_page.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -10,8 +14,42 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
 
   void _abrirEmpresa(){
-
+    Navigator.push(
+      context, 
+      MaterialPageRoute(
+        builder: (context) => const TelaEmpresa()
+      )
+    );
   }
+
+  void _abrirServico(){
+    Navigator.push(
+      context, 
+      MaterialPageRoute(
+        builder: (context) => const TelaServico()
+      )
+    );
+  }
+
+  void _abrirCliente(){
+    Navigator.push(
+      context, 
+      MaterialPageRoute(
+        builder: (context) => const TelaCliente()
+      )
+    );
+  }
+
+  void _abrirContato(){
+    Navigator.push(
+      context, 
+      MaterialPageRoute(
+        builder: (context) => const TelaContato()
+      )
+    );
+  }
+
+  
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +76,7 @@ class _HomeState extends State<Home> {
                     child: Image.asset("assets/images/menu_empresa.png"),
                   ),
                   GestureDetector(
-                    onTap: _abrirEmpresa,
+                    onTap: _abrirServico,
                     child: Image.asset("assets/images/menu_servico.png"),
                   )
                 ],
@@ -50,11 +88,11 @@ class _HomeState extends State<Home> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   GestureDetector(
-                    onTap: _abrirEmpresa,
+                    onTap: _abrirCliente,
                     child: Image.asset("assets/images/menu_cliente.png"),
                   ),
                   GestureDetector(
-                    onTap: _abrirEmpresa,
+                    onTap: _abrirContato,
                     child: Image.asset("assets/images/menu_contato.png"),
                   )
                 ],
